@@ -33,3 +33,4 @@ Entorno de Red: El servidor fue desplegado bajo una configuración NAT con Reenv
 
 Referencias y Aportes
 Visualización de datos y lógica base: Desarrollo original realizado en su totalidad conforme a los requerimientos técnicos y creativos solicitados.
+# Evaluacion-4.2
