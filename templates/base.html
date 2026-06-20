@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        #cuerpo-global {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+        #barra-navegacion {
+            background-color: #161b22;
+            border-bottom: 2px solid #58a6ff;
+            padding: 15px;
+            text-align: center;
+        }
+        #enlace-principal, #enlace-radar, #enlace-industrial {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 20px;
+            padding: 5px 10px;
+        }
+        #enlace-principal:hover, #enlace-radar:hover, #enlace-industrial:hover {
+            color: #ffffff;
+            border-bottom: 2px solid #ffffff;
+        }
+        #contenedor-central {
+            max-width: 850px;
+            margin: 40px auto;
+            background-color: #21262d;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body id="cuerpo-global">
+
+    <nav id="barra-navegacion">
+        <a id="enlace-principal" href="{{ url_for('index') }}">Panel Base OLED</a>
+        <a id="enlace-radar" href="{{ url_for('vista2') }}">Matriz de Puntos LED</a>
+        <a id="enlace-industrial" href="{{ url_for('vista3') }}">Barras de Nivel Lógico</a>
+    </nav>
+
+    <main id="contenedor-central">
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>

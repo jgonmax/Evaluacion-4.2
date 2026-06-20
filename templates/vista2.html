@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Visualización 2 - Matriz de Puntos{% endblock %}
+
+{% block content %}
+    <style>
+        #titulo-led {
+            color: #ff7b72;
+        }
+        #tabla-dot-matrix {
+            border-collapse: separate;
+            border-spacing: 12px;
+            background-color: #161b22;
+            padding: 15px;
+            margin: 25px auto;
+            border: 2px dashed #ff7b72;
+            width: fit-content;
+        }
+        #led-encendido {
+            width: 40px;
+            height: 40px;
+            background-color: #f85149;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #f85149;
+        }
+        #led-apagado {
+            width: 40px;
+            height: 40px;
+            background-color: #21262d;
+            border-radius: 50%;
+            border: 1px solid #30363d;
+        }
+    </style>
+
+    <h1 id="titulo-led">Panel Industrial Dot Matrix</h1>
+    <p id="desc-led">Representación física de los nodos activos simulando diodos emisores de luz (LED) independientes.</p>
+
+    <table id="tabla-dot-matrix">
+        {% for fila in matriz %}
+        <tr>
+            {% for celda in fila %}
+                {% if celda == 1 %}
+                    <td id="led-encendido"></td>
+                {% else %}
+                    <td id="led-apagado"></td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
